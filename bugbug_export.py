@@ -6,7 +6,7 @@ from bugbug_client import (
     extract_clean_rows,
     was_run_today
 )
-from sheets_client import connect, get_or_create_worksheet, append_rows_to_sheet
+from sheets_client import connect, get_or_create_worksheet, append_rows_to_sheet, finalize
 from datetime import datetime
 
 def process_project(project_name, api_key, spreadsheet, today_str):
@@ -72,6 +72,10 @@ def main():
         except Exception as e:
             print(f"  ✗ ERROR processing {project_name}: {e}")
             all_summary.append((project_name, f"ERROR: {e}", 0))
+    
+    # Summary Sheet Pivot Table Logging
+    print("\nUpdating Summary sheet...")
+    finalize(spreadsheet)
 
     # Final summary
     print(f"\n{'='*50}")
