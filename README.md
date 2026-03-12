@@ -12,10 +12,11 @@ Master sheets document (can be changed): https://docs.google.com/spreadsheets/d/
 
 Github Repo: https://github.com/lindacovacaps/BugBug_TestSuites 
 
-### credentials.json
-Using a google cloud service account, enable APIs for Google Drive as well as Google Sheets. After creating account, add personal credentials.json file from service account keys to local directory. Importantly, add service account email address (ending with "@bugbug-testsuites.iam.gserviceaccount.com" or equivalent) to shared list of worksheet collaborators with "Editor" access. 
+### Generating credentials.json
+Create a google cloud project. Once created, enable the APIs for  Google Drive as well as Google Sheets for the project. Then navigate to "IAM & Admin > Service Accounts" and create a service account for the project. Once created, go to the service account's sub-section "Keys" and click "new key" > "JSON" and download the credentials.json file. 
+Additionally, add personal credentials.json file from service account keys to your local project file directory. Importantly, add service account email address (ending with "@bugbug-testsuites.iam.gserviceaccount.com" or equivalent) to the "shared" list of google sheets collaborators with "Editor" access to allow it to make remove changes on your behalf. 
 
-Ensure that both 
+Lastly, ensure that both 
 
 GOOGLE_SHEET_NAME = "[Automated] BugBug Test Results" (or equivalent sheet name -- must be exact verbatim)
 GOOGLE_CREDENTIALS_FILE = "credentials.json"
