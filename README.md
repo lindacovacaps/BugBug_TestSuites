@@ -4,8 +4,16 @@ Python script for retrieving test suite runs (daily) and storing in spreadsheet 
 ## Set Up / Running
 set-up: create venv + pip install -r requirements.txt
 
-to run script: python bugbug_export.py
+### Running
+Use the "run.py" file to run the script using CLI arguments. 
+Accepted Arguments 1: python run.py 1, python run.py 2
 
+Mode 1: runs the bugbug_export.py script which exports the data from bugbug API as well as creates the Test Suite Dashboard summary. 
+Mode 2: runs the summary.py script which updates the Summary sheet only without re-calling bugbug API. 
+
+If neither argument is provided or argument is left empty, run.py will display execution instructions and accepted CLI arguments. 
+
+## Spreadsheet Export
 exported sheets will be in master document organised by "Project_Name - Test Suite Title". 
 
 Master sheets document (can be changed): https://docs.google.com/spreadsheets/d/1s7LpJgfEgrVqavlW9zQBBnfvYE1VlDK3zjXJQP4QvQQ/edit?gid=0#gid=0
